@@ -550,6 +550,7 @@ echo '<table style="width: 100%;">';
 
 $no=1;
 foreach ($hasil as $df) { 
+  if($no < 4){  
 ?>
   
   <?php if($no==1){ echo "<tr>"; }?>
@@ -567,12 +568,12 @@ foreach ($hasil as $df) {
 
     </td>
 
-  <?php if($no==3){ echo "</tr>"; $no=0; } ?>
+  <?php if($no==3){ echo "</tr>"; } ?>
   
   <?php $no++; ?>
 
 
-<?php } ?>
+<?php } } ?>
 
 </table>
 
