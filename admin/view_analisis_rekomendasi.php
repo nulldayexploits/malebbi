@@ -119,10 +119,10 @@
                        $nn[3],
                        $nn[4],
                        $nn[5],
-                 ($nn[1]*$val_kepentingan[0])+
-                 ($nn[2]*$val_kepentingan[1])+
-                 ($nn[3]*$val_kepentingan[2])+
-                 ($nn[4]*$val_kepentingan[3])
+                 ($nn[6]*$val_kepentingan[0])+
+                 ($nn[7]*$val_kepentingan[1])+
+                 ($nn[8]*$val_kepentingan[2])+
+                 ($nn[9]*$val_kepentingan[3])
               ); 
 
     $x++;
