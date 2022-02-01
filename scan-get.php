@@ -4,6 +4,8 @@
 
  $_SESSION['meja'] = $_GET['meja'];
  
+ unset($_SESSION['pesanan']);
+
  if(isset($_SESSION['meja']))
  {
  	echo '<script type="text/javascript">
