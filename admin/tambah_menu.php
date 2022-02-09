@@ -19,6 +19,15 @@
         <label>Nama Menu</label>
         <input class="w3-input w3-border" type="input" name="nama_menu">
       </div>
+
+      <div class="w3-section">
+        <label>Makanan/Minuman?</label>
+        <select class="w3-input w3-border" name="makanan_or_minuman">
+          <option value="">- Pilih -</option>
+          <option value="MAKANAN">MAKANAN</option>
+          <option value="MINUMAN">MINUMAN</option>
+        </select>
+      </div>
             
       <div class="w3-section">
         <label>Harga</label>
@@ -61,14 +70,15 @@ include('template/bawah.php');
 if(isset($_POST['Submit'])) {
 
   // Memasukkan Data Inputan ke Varibael
-  $nama_menu    = $_POST['nama_menu'];
-  $harga        = $_POST['harga'];
-  $type_makanan = $_POST['type_makanan'];
-  $kalori       = $_POST['kalori'];
+  $nama_menu          = $_POST['nama_menu'];
+  $makanan_or_minuman = $_POST['makanan_or_minuman'];
+  $harga              = $_POST['harga'];
+  $type_makanan       = $_POST['type_makanan'];
+  $kalori             = $_POST['kalori'];
 
-  $berkas1      = $_FILES['gambar']['name'];
-  $tmp_berkas1  = $_FILES['gambar']['tmp_name'];
-  $gambar       = "gambar/".$berkas1;
+  $berkas1            = $_FILES['gambar']['name'];
+  $tmp_berkas1        = $_FILES['gambar']['tmp_name'];
+  $gambar             = "gambar/".$berkas1;
   
   if (move_uploaded_file($tmp_berkas1, $gambar)) {
     $gambar = $gambar;
@@ -77,8 +87,8 @@ if(isset($_POST['Submit'])) {
   }
   
   // Memasukkan data kedatabase berdasarakan variabel tadi
-  $result = mysqli_query($mysqli, "INSERT INTO table_menu (id, nama_menu, harga, type_makanan, kalori, gambar) 
-                               VALUES(null, '$nama_menu', $harga, $type_makanan, $kalori, '$gambar')");
+  $result = mysqli_query($mysqli, "INSERT INTO table_menu (id, nama_menu, makanan_or_minuman, harga, type_makanan, kalori, gambar) 
+                               VALUES(null, '$nama_menu', '$makanan_or_minuman', $harga, $type_makanan, $kalori, '$gambar')");
   
   // Cek jika proses simpan ke database sukses atau tidak   
   if($result){ 

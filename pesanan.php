@@ -1,5 +1,13 @@
 <?php include "template/top.php"; ?>
 
+
+ <section class="mbr-section mbr-section-hero mbr-section-full mbr-after-navbar" id="header1-1">
+        <div class="mbr-table-cell">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="mbr-section-full col-md-12 col-lg-11">
+                        <h3 class="mbr-section-title display-2" id="judul" style="padding-top: 120px;">Daftar Pesanan</h3>
+
 <style type="text/css">
   
     .button {
@@ -14,8 +22,6 @@
     }
 
 </style>
-
-<h2 style="color:black;margin-top: 70px;margin-left: 70px;">Daftar Pesanan</h2>
 
 
 
@@ -57,9 +63,15 @@
     <a href="pesanan-unset-all.php" class="button" onclick='return confirm(`Apakah Anda Yakin Menghapus Semua Pesanan Ini?`);'>Hapus Semua</a>
 
 
-<script type="text/javascript">
-  
-</script>
 
-</body>
-</html>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </section>
+
+
+
+<?php include "template/bottom.php"; ?>

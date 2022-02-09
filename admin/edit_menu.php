@@ -28,6 +28,15 @@
         <label>Nama Menu</label>
         <input class="w3-input w3-border" type="input" name="nama_menu" value="<?php echo $data['nama_menu']; ?>">
       </div>
+
+      <div class="w3-section">
+        <label>Makanan/Minuman?</label>
+        <select class="w3-input w3-border" name="makanan_or_minuman">
+          <option value="">- Pilih -</option>
+          <option value="MAKANAN" <?php if($data['makanan_or_minuman']=="MAKANAN"){echo 'selected';} ?>>MAKANAN</option>
+          <option value="MINUMAN" <?php if($data['makanan_or_minuman']=="MINUMAN"){echo 'selected';} ?>>MINUMAN</option>
+        </select>
+      </div>
             
       <div class="w3-section">
         <label>Harga</label>
@@ -74,11 +83,12 @@ include('template/bawah.php');
 if(isset($_POST['Update'])) {
 
   // Memasukkan Data Inputan ke Varibael
-  $id           = $_POST['id'];
-  $nama_menu    = $_POST['nama_menu'];
-  $harga        = $_POST['harga'];
-  $type_makanan = $_POST['type_makanan'];
-  $kalori       = $_POST['kalori'];
+  $id                 = $_POST['id'];
+  $nama_menu          = $_POST['nama_menu'];
+  $makanan_or_minuman = $_POST['makanan_or_minuman'];
+  $harga              = $_POST['harga'];
+  $type_makanan       = $_POST['type_makanan'];
+  $kalori             = $_POST['kalori'];
   
   if($_FILES['gambar']<>"")
   {
@@ -104,6 +114,7 @@ if(isset($_POST['Update'])) {
   // Memasukkan data kedatabase berdasarakan variabel tadi
   $result = mysqli_query($mysqli, "UPDATE table_menu SET 
                                    nama_menu='$nama_menu',
+                                   makanan_or_minuman='$makanan_or_minuman',
                                    harga='$harga',
                                    type_makanan='$type_makanan',
                                    kalori='$kalori',

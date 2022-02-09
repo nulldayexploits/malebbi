@@ -1,397 +1,168 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Malebbi Resto App</title>
-  <style type="text/css">
-    * {
-  border: 0;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Lato, Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  text-decoration: none;
-}
-
-
-/*======================================================
-                          Navbar
-  ======================================================*/
-#navbar {
-  background: #ff914d;
-  color: rgb(13, 26, 38);
-  position: fixed;
-  top: 0;
-  height: 60px;
-  line-height: 60px;
-  width: 100vw;
-  z-index: 10;
-}
-
-.nav-wrapper {
-  margin: auto;
-  text-align: center;
-  width: 70%;
-} @media(max-width: 768px) {
-    .nav-wrapper {
-      width: 90%;
-    }
-  } @media(max-width: 638px) {
-      .nav-wrapper {
-        width: 100%;
-      }
-    } 
-
-
-.logo {
-  float: left;
-  margin-left: 28px;
-  font-size: 1.5em;
-  height: 60px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-} @media(max-width: 768px) {
-    .logo {
-/*       margin-left: 5px; */
-    }
-  }
-
-#navbar ul {
-  display: inline-block;
-  float: right;
-  list-style: none;
-  /* margin-right: 14px; */
-  margin-top: -2px;
-  text-align: right;
-  transition: transform 0.5s ease-out;
-  -webkit-transition: transform 0.5s ease-out;
-} @media(max-width: 640px) {
-    #navbar ul {
-      display: none;
-    }
-  } @media(orientation: landscape) {
-      #navbar ul {
-        display: inline-block;
-      }
-    }
-
-#navbar li {
-  display: inline-block;
-}
-
-#navbar li a {
-  color: white;
-  display: block;
-  font-size: 0.7em;
-  height: 50px;
-  letter-spacing: 1px;
-  margin: 0 20px;
-  padding: 0 4px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  font-weight: bold;
-}
-
-#navbar li a:hover {
-  /* border-bottom: 1px solid rgb(28, 121, 184); */
-  color: rgb(28, 121, 184);
-  transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-}
-
-/* Animated Bottom Line */
-#navbar li a:before, #navbar li a:after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  bottom: -1px;
-  background: rgb(13, 26, 38);
-}
-
-#navbar li a:before {
-  left: 0;
-  transition: 0.5s;
-}
-
-#navbar li a:after {
-  background: rgb(13, 26, 38);
-  right: 0;
-  /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
-}
-
-#navbar li a:hover:before {
-  background: rgb(13, 26, 38);
-  width: 100%;
-  transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
-}
-
-#navbar li a:hover:after {
-  background: transparent;
-  width: 100%;
-  /* transition: 0s; */
-}
-
-
-
-/*======================================================
-                    Mobile Menu Menu Icon
-  ======================================================*/
-@media(max-width: 640px) {
-  .menuIcon {
-    cursor: pointer;
-    display: block;
-    position: fixed;
-    right: 15px;
-    top: 20px;
-    height: 23px;
-    width: 27px;
-    z-index: 12;
-  }
-
-  /* Icon Bars */
-  .icon-bars {
-    background: rgb(13, 26, 38);
-    position: absolute;
-    left: 1px;
-    top: 45%;
-    height: 2px;
-    width: 20px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  } 
-
-  .icon-bars::before {
-    background: rgb(13, 26, 38);
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -8px;
-    height: 2px;
-    width: 20px;
-/*     -webkit-transition: top 0.2s ease 0.3s;
-    transition: top 0.2s ease 0.3s; */
-    -webkit-transition: 0.3s width 0.4s;
-    transition: 0.3s width 0.4s;
-  }
-
-  .icon-bars::after {
-    margin-top: 0px;
-    background: rgb(13, 26, 38);
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 2px;
-    width: 20px;
-/*     -webkit-transition: top 0.2s ease 0.3s;
-    transition: top 0.2s ease 0.3s; */
-    -webkit-transition: 0.3s width 0.4s;
-    transition: 0.3s width 0.4s;
-  }
-
-  /* Bars Shadows */
-  .icon-bars.overlay {
-    background: rgb(97, 114, 129);
-    background: rgb(183, 199, 211);
-    width: 20px;
-    animation: middleBar 3s infinite 0.5s;
-    -webkit-animation: middleBar 3s infinite 0.5s;
-  } @keyframes middleBar {
-      0% {width: 0px}
-      50% {width: 20px}
-      100% {width: 0px}
-    } @-webkit-keyframes middleBar {
-        0% {width: 0px}
-        50% {width: 20px}
-        100% {width: 0px}
-      }
-
-  .icon-bars.overlay::before {
-    background: rgb(97, 114, 129);
-    background: rgb(183, 199, 211);
-    width: 10px;
-    animation: topBar 3s infinite 0.2s;
-    -webkit-animation: topBar 3s infinite 0s;
-  } @keyframes topBar {
-      0% {width: 0px}
-      50% {width: 10px}
-      100% {width: 0px}
-    } @-webkit-keyframes topBar {
-        0% {width: 0px}
-        50% {width: 10px}
-        100% {width: 0px}
-      }
-
-  .icon-bars.overlay::after {
-    background: rgb(97, 114, 129);
-    background: rgb(183, 199, 211);
-    width: 15px;
-    animation: bottomBar 3s infinite 1s;
-    -webkit-animation: bottomBar 3s infinite 1s;
-  } @keyframes bottomBar {
-      0% {width: 0px}
-      50% {width: 15px}
-      100% {width: 0px}
-    } @-webkit-keyframes bottomBar {
-        0% {width: 0px}
-        50% {width: 15px}
-        100% {width: 0px}
-      }
-
-
-  /* Toggle Menu Icon */
-  .menuIcon.toggle .icon-bars {
-    top: 5px;
-    transform: translate3d(0, 5px, 0) rotate(135deg);
-    transition-delay: 0.1s;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .menuIcon.toggle .icon-bars::before {
-    top: 0;
-    transition-delay: 0.1s;
-    opacity: 0;
-  }
-
-  .menuIcon.toggle .icon-bars::after {
-    top: 10px;
-    transform: translate3d(0, -10px, 0) rotate(-270deg);
-    transition-delay: 0.1s;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .menuIcon.toggle .icon-bars.overlay {
-    width: 20px;
-    opacity: 0;
-    -webkit-transition: all 0s ease 0s;
-    transition: all 0s ease 0s;
-  }
-}
-
-
-/*======================================================
-                   Responsive Mobile Menu 
-  ======================================================*/
-.overlay-menu {
-  background: lightblue;
-  color: rgb(13, 26, 38);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 15px;
-  transform: translateX(-100%);
-  width: 100vw;
-  height: 100vh;
-  -webkit-transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-}
-
-.overlay-menu ul, .overlay-menu li {
-  display: block;
-  position: relative;
-}
-
-.overlay-menu li a {
-  display: block;
-  font-size: 1.8em;
-  letter-spacing: 4px;
-/*   opacity: 0; */
-  padding: 10px 0;
-  text-align: right;
-  text-transform: uppercase;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-/*   -webkit-transition: 0.2s opacity 0.2s ease-out;
-  transition: 0.2s opacity 0.2s ease-out; */
-}
-
-.overlay-menu li a:hover,
-.overlay-menu li a:active {
-  color: rgb(28, 121, 184);
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-  </style>
-
-
-
-
-
-<style type="text/css">
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 70%;
-  margin: 70px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-</style>
-
-
-</head>
-
-
-
-<body>
-
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<nav id="navbar" class="">
-  <div class="nav-wrapper">
-    <!-- Navbar Logo -->
-    <div class="logo">
-      <!-- Logo Placeholder for Inlustration -->
-      <a href="scan.php"><b style="color:#fff;">Meja: <?php if(isset($_SESSION['meja'])){ echo $_SESSION['meja'];}else{echo 'Belum Ada';} ?></b></a>
-    </div>
-
-    <!-- Navbar Links -->
-    <ul id="menu">
-      <li><a href="index.php">Menu Pemesanan</a></li><!--
-   --><li><a href="menu_rekomendasi.php">Menu Rekomendasi</a></li><!--
-   --><li><a href="pesanan.php">Pesanan</a></li>
-      <li><a href="login.php">Login</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-<!-- Menu Icon -->
-<div class="menuIcon">
-  <span class="icon icon-bars"></span>
-  <span class="icon icon-bars overlay"></span>
+    <html lang="en" class="desktop mbr-site-loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Malebbi Resto</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/gambar/<?php echo $d1['nama_logo']; ?>" type="image/x-icon">
+    <meta name="description" content="">
+    <link href="assets/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/material.css">
+    <link rel="stylesheet" href="assets/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/socicon.min.css">
+    <link rel="stylesheet" href="assets/style(1).css">
+    <link rel="stylesheet" href="assets/style(2).css">
+    <link href="assets/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"> 
+    <style type="text/css">.garis_inovasi{margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 5px;}</style>
+    <link rel="stylesheet" href="assets/mbr-additional.css" type="text/css"><style>.cke{visibility:hidden;}</style></head>
+    <body style=""><section id="top-1" class="engine"><a href="https://mobirise.info/">Mobirise</a> Mobirise v4.5.4</section><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
 </div>
+<div class="pace-activity"></div></div>
+    <link rel="stylesheet" href="assets/flipclock.css" type="text/css">
+    <link href="assets/centerblue.css" rel="stylesheet">
+    <link href="assets/main.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/jquery-ui.css">
+    <script src="assets/jquery.js.download"></script>
+    <script src="assets/jquery-ui.js.download"></script>
+    <script src="assets/pace.min.js.download"></script>
+    
+    <div role="log" ariax-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"><div>Butuh bantuan kami?</div></div>
+    <link rel="stylesheet" type="text/css" href="assets/css/gigo-responsive.css">
 
+    <style type="text/css">
+        :root {
+          --body-bg-color: #f9e5cf;
+          --nmain-color: #fff;
+          --nmain-bg-color: #ff914d;
+          --nmain-bg-color-hover: #3e2723;
+          --ncont-bg-color: #d7ccc8;
+          --nhover-nav-color: #dce1ed;
+        }
 
-<div class="overlay-menu">
-  <ul id="menu">
-      <li><a href="index.php">Menu Pemesanan</a></li><!--
-   --><li><a href="menu_rekomendasi.php">Menu Rekomendasi</a></li><!--
-   --><li><a href="pesanan.php">Pesanan</a></li>
-   --><li><a href="login.php">Login</a></li>
-    </ul>
-</div>
+        body{
+          background-color: var(--body-bg-color);
+        }
+
+        #menu-2 .link{ font-size: 14px; }
+        /*atur warna navbar*/
+        #menu-2 .navbar,
+        #menu-2 .nav-dropdown-sm,
+        #menu-2 .nav-dropdown-sm .link[aria-expanded="true"],
+        #menu-2 .nav-dropdown-sm .dropdown-menu {
+          background: var(--nmain-bg-color);
+        }
+
+        /*atur hover menu*/
+        #menu-2 .link:hover,
+        #menu-2 .dropdown-item:hover,
+        #menu-2 .link:focus,
+        #menu-2 .dropdown-item:focus {
+          color: var(--nhover-nav-color);
+          background-color: var(--nhover-bg-color); 
+        }
+
+        .gigo-responsive th {
+          background-color: var(--nmain-bg-color);
+          color: var(--nmain-color);
+        }
+
+        .gigo-responsive tr {
+          background-color: var(--ncont-bg-color);
+          border: 1px solid var(--nmain-bg-color);
+        }
+
+        .gigo-responsive tr {
+          border-bottom: 3px solid var(--nmain-bg-color);
+        }
+      
+        .gigo-responsive td {
+          border-bottom: 1px solid var(--nmain-bg-color);
+        }
+        
+        .btn-warning {
+          background-color: var(--nmain-bg-color);
+          border-color: var(--nmain-bg-color);
+          color: var(--nmain-color);
+        }
+
+       .btn-warning:hover,
+       .btn-warning:focus,
+       .btn-warning.focus,
+       .btn-warning:active,
+       .btn-warning.active {
+          color: var(--nmain-color);
+          background-color: var(--nmain-bg-color-hover);
+          border-color: var(--nmain-bg-color-hover);
+       }
+
+       .button {
+          color: var(--nmain-color);
+          background-color: var(--nmain-bg-color-hover);
+          border-color: var(--nmain-bg-color-hover);
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+        }
+
+    </style>
+    <section id="menu-2">
+        <nav class="navbar navbar-dropdown bg-color navbar-fixed-top navbar-short">
+            <div class="container">
+                <div class="mbr-table">
+                    <div class="mbr-table-cell">
+                        <div class="navbar-brand">
+                            <a href="#" class="navbar-logo">
+                                <img src="../img/logo2.png" alt="" title=""></a>
+                            <a class="navbar-caption" href="scan.php" style="font-size: 25px;font-weight: bold;"><b style="color:#fff;">Meja: <?php if(isset($_SESSION['meja'])){ echo $_SESSION['meja'];}else{echo 'Belum Ada';} ?></b></a>
+                        </div>
+                    </div>
+                    <div class="mbr-table-cell">
+                        <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="hamburger-icon"></div>
+                        </button>
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                                      
+
+                            <li class="nav-item"><a class="nav-link link" href="index.php">Menu Pemesanan</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="menu_rekomendasi.php">Menu Rekomendasi</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="pesanan.php">Pesanan</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="login.php" style="cursor: pointer;">Login</a></li>
+ 
+
+                        </ul>
+                        
+                        <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="close-icon"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+   <script src="assets/sweetalert/dist/sweetalert2.all.min.js"></script>
+
+   <script type="text/javascript">
+      $('.confirmation-logout').on('click', function(e) {
+        Swal.fire({
+          title: 'Anda Yakin?',
+          text: "Ingin Logout!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya, Yakin!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "config/logout.php";
+          }
+        })
+      });
+
+   </script>

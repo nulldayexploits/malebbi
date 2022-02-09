@@ -1,5 +1,14 @@
 <?php include "template/top.php"; ?>
 
+
+ <section class="mbr-section mbr-section-hero mbr-section-full mbr-after-navbar" id="header1-1">
+        <div class="mbr-table-cell">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="mbr-section-full col-md-12 col-lg-11">
+                        <h3 class="mbr-section-title display-2" id="judul" style="padding-top: 120px;">Pesanan Berhasil Dipesan!</h3>
+
+
 <style type="text/css">
   
     .button {
@@ -14,8 +23,6 @@
     }
 
 </style>
-
-<h2 style="color:black;margin-top: 70px;margin-left: 70px;">Pesanan Berhasil Dipesan!</h2>
 
 <center>
 
@@ -55,11 +62,16 @@
     
 ?>
 
-<script type="text/javascript">
-  
-</script>
 
-</body>
-</html>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </section>
+
+
+
+<?php include "template/bottom.php"; ?>
 
