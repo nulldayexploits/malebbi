@@ -33,24 +33,27 @@
     ini_set('display_startup_errors', 1); 
     error_reporting(E_ALL);
         
-
+    $metode = $_GET['metode']; 
+    $_SESSION['cetak']=array();
+       
    
     for ($i=0; $i < count($_SESSION['pesanan']); $i++) { 
          
+          array_push($_SESSION['cetak'],$_SESSION['pesanan'][$i]); 
+
           $dat = explode('||', $_SESSION['pesanan'][$i]);
 
           $id = cek_id($dat[0], $mysqli);
           $tgl = date('Y-m-d');
           $wkt = date('H:i:s');
 
-          $result = mysqli_query($mysqli, "INSERT INTO table_transaksi (id, id_menu, total_bayar, tgl_pesan, waktu) 
-            VALUES(null, $id, $dat[1], '$tgl', '$wkt')") or die(mysqli_error($mysqli));
+          $result = mysqli_query($mysqli, "INSERT INTO table_transaksi (id, id_menu, total_bayar, tgl_pesan, waktu, metode_pembayaran) 
+            VALUES(null, $id, $dat[1], '$tgl', '$wkt', '$metode')") or die(mysqli_error($mysqli));
 
-
-          //unset($_SESSION['pesanan'][$i]);
 
     }
 
+    unset($_SESSION['pesanan']);
 
     function cek_id($val, $mysqli)
     {
@@ -62,7 +65,7 @@
     
 ?>
 
-
+<a id="pesanan" href="cetak.php?metode=<?php echo $metode; ?>" class="button" onclick='return confirm(`Apakah Anda Yakin Mencetak Struk?`);'>Cetak Struk</a>
 
                         </div>
                     </div>

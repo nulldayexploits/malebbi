@@ -120,7 +120,7 @@
                         <div class="navbar-brand">
                             <a href="#" class="navbar-logo">
                                 <img src="../img/logo2.png" alt="" title=""></a>
-                            <a class="navbar-caption" href="scan.php" style="font-size: 25px;font-weight: bold;"><b style="color:#fff;">Meja: <?php if(isset($_SESSION['meja'])){ echo $_SESSION['meja'];}else{echo 'Belum Ada';} ?></b></a>
+                            <a class="navbar-caption" href="#" style="font-size: 25px;font-weight: bold;"><b style="color:#fff;">Meja: <?php if(isset($_SESSION['meja'])){ echo $_SESSION['meja'];}else{echo 'Belum Ada';} ?></b></a>
                         </div>
                     </div>
                     <div class="mbr-table-cell">
@@ -133,7 +133,7 @@
                             <li class="nav-item"><a class="nav-link link" href="index.php">Menu Pemesanan</a></li>
                             <li class="nav-item"><a class="nav-link link" href="menu_rekomendasi.php">Menu Rekomendasi</a></li>
                             <li class="nav-item"><a class="nav-link link" href="pesanan.php">Pesanan</a></li>
-                            <li class="nav-item"><a class="nav-link link" href="login.php" style="cursor: pointer;">Login</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link link" href="login.php" style="cursor: pointer;">Login</a></li> -->
  
 
                         </ul>

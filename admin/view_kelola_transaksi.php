@@ -21,6 +21,7 @@
           <th>Pesanan</th>
           <th>Tanggal</th>
           <th>Waktu</th>
+          <th>Metode<br>Pembayaran</th>
           <th>Total Bayar</th>
         </tr>
         
@@ -37,6 +38,7 @@
           <td><center><?php echo $data['nama_menu']; ?></td>
           <td><center><?php echo TanggalIndo($data['tgl_pesan']); ?></td>
           <td><center><?php echo $data['waktu']; ?></td>
+          <td><center><?php echo $data['metode_pembayaran']; ?></td>
           <td><center>Rp. <?php echo number_format($data['total_bayar']); ?></td>
         </tr>
         <?php $no++; } ?>

@@ -57,9 +57,19 @@
 
     </table>
     <b>Total Rp. <?php echo number_format($hrg); ?></b>
+    <br>
+    Metode Pembayaran: <select id="metode">
+                            <option value="TUNAI">TUNAI</option>
+                            <option value="Shopee PAY">Shopee PAY</option>
+                            <option value="OVO">OVO</option>
+                            <option value="DANA">DANA</option>
+                            <option value="GO PAY">GO PAY</option>
+                            <option value="LINK AJA">LINK AJA</option>
+                            <option value="i.saku">i.saku</option>
+                        </select>
 
     <br><br>
-    <a href="pesanan-fix.php" class="button" onclick='return confirm(`Apakah Anda Yakin Memesan Pesanan Ini?`);'>Pesan</a>
+    <a id="pesanan" href="" class="button" onclick='return confirm(`Apakah Anda Yakin Memesan Pesanan Ini?`);'>Pesan</a>
     <a href="pesanan-unset-all.php" class="button" onclick='return confirm(`Apakah Anda Yakin Menghapus Semua Pesanan Ini?`);'>Hapus Semua</a>
 
 
@@ -72,6 +82,14 @@
           </div>
     </section>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+       $('#pesanan').attr('href', 'pesanan-fix.php?metode='+$('#metode').val());
+    });
 
+    $('#metode').on('change', function (e) {
+       $('#pesanan').attr('href', 'pesanan-fix.php?metode='+$('#metode').val());
+    });
+</script>
 
 <?php include "template/bottom.php"; ?>

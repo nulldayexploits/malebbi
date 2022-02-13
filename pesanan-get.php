@@ -13,8 +13,12 @@
        
         $menu=$_GET['menu'];  
         
-        $comm = array_push($_SESSION['pesanan'],$menu); 
+        if($_GET['menu'] <> ""){
 
+            $comm = array_push($_SESSION['pesanan'],$menu); 
+
+        }
+        
     }
 
      if($comm)
