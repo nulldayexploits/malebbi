@@ -30,7 +30,7 @@
           $no = 1;
           $result = mysqli_query($mysqli, "SELECT * FROM table_transaksi a 
                                            LEFT JOIN table_menu b ON a.id_menu = b.id
-                                           ORDER BY a.tgl_pesan");
+                                           ORDER BY a.tgl_pesan DESC");
           while($data = mysqli_fetch_array($result)) { 
         ?>
         <tr>
