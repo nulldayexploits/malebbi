@@ -1,0 +1,12 @@
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (25, 'Air Mineral', 'MINUMAN', 6000, 5, 5, 'air-mineral.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (26, 'Es Teh', 'MINUMAN', 5000, 30, 50, 'es-teh.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (27, 'Green Tea', 'MINUMAN', 12000, 30, 50, 'green-tea.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (28, 'Ice Milo', 'MINUMAN', 15000, 40, 60, 'ice-milo.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (29, 'Ice Oreo', 'MINUMAN', 15000, 40, 60, 'ice-oreo.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (30, 'Ice Taro', 'MINUMAN', 15000, 40, 60, 'ice-taro.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (31, 'Jus Alpukat', 'MINUMAN', 15000, 20, 50, 'jus-alpukat.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (32, 'Jus Apel', 'MINUMAN', 15000, 20, 50, 'jus-apel.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (33, 'Jus Jeruk', 'MINUMAN', 15000, 20, 50, 'jus-jeruk.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (34, 'Mocca Chino', 'MINUMAN', 13000, 40, 50, 'mocca-chino.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (35, 'Taro Cheese', 'MINUMAN', 15000, 40, 60, 'taro-cheese.png');
+INSERT INTO `table_menu` (`id`, `nama_menu`, `makanan_or_minuman`, `harga`, `type_makanan`, `kalori`, `gambar`) VALUES (36, 'Thai Tea', 'MINUMAN', 12000, 40, 40, 'thai-tea.png');

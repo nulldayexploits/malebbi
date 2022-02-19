@@ -34,7 +34,10 @@
     error_reporting(E_ALL);
         
     $metode = $_GET['metode']; 
-    $_SESSION['cetak']=array();
+
+    if(!isset($_SESSION['cetak'])){
+        $_SESSION['cetak']=array();
+    }
        
    
     for ($i=0; $i < count($_SESSION['pesanan']); $i++) { 
@@ -65,7 +68,7 @@
     
 ?>
 
-<a id="pesanan" href="cetak.php?metode=<?php echo $metode; ?>" class="button" onclick='return confirm(`Apakah Anda Yakin Mencetak Struk?`);'>Cetak Struk</a>
+<a id="pesanan" href="cetak.php?metode=<?php echo $metode; ?>" target="_blank" class="button" onclick='return confirm(`Apakah Anda Yakin Mencetak Struk?`);'>Cetak Struk</a>
 
                         </div>
                     </div>

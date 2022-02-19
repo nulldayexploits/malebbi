@@ -51,6 +51,7 @@ body {font-size:16px;}
     <a href="view_analisis_rekomendasi.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Analisis Rekomendasi</a>
     <a href="view_kelola_transaksi.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Kelola Transaksi</a>
     <a href="view_setting_saw.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Setting SAW</a>
+    <a href="view_rekap.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Rekap Penghasilan</a>
     <!-- <a href="view_rekap_bulan.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Rekap Bulanan</a>
     <a href="view_rekap_semester.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Rekap Semester</a>
     <a href="view_rekap_dupak.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Rekap Dupak</a>

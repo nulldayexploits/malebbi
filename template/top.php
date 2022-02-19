@@ -133,6 +133,7 @@
                             <li class="nav-item"><a class="nav-link link" href="index.php">Menu Pemesanan</a></li>
                             <li class="nav-item"><a class="nav-link link" href="menu_rekomendasi.php">Menu Rekomendasi</a></li>
                             <li class="nav-item"><a class="nav-link link" href="pesanan.php">Pesanan</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="checkout.php">Checkout</a></li>
                             <!-- <li class="nav-item"><a class="nav-link link" href="login.php" style="cursor: pointer;">Login</a></li> -->
  
 
