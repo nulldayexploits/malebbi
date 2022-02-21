@@ -1,5 +1,32 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.3.13-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             10.2.0.5599
+-- --------------------------------------------------------
 
--- Dumping data for table 21_saw_resto.table_transaksi: ~560 rows (approximately)
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table 21_saw_resto.table_transaksi
+CREATE TABLE IF NOT EXISTS `table_transaksi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_menu` int(11) DEFAULT NULL,
+  `total_bayar` double DEFAULT NULL,
+  `tgl_pesan` date DEFAULT NULL,
+  `waktu` time DEFAULT NULL,
+  `metode_pembayaran` varchar(150) DEFAULT NULL,
+  `nomor_meja` varchar(150) DEFAULT NULL,
+  `session_meja` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_table_transaksi_table_menu` (`id_menu`),
+  CONSTRAINT `FK_table_transaksi_table_menu` FOREIGN KEY (`id_menu`) REFERENCES `table_menu` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=882 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table 21_saw_resto.table_transaksi: ~585 rows (approximately)
 /*!40000 ALTER TABLE `table_transaksi` DISABLE KEYS */;
 INSERT INTO `table_transaksi` (`id`, `id_menu`, `total_bayar`, `tgl_pesan`, `waktu`, `metode_pembayaran`, `nomor_meja`, `session_meja`) VALUES
 	(4, 20, 22000, '2021-12-02', '19:46:38', 'GO PAY', '12', '2022-02-17 20:51:52'),
