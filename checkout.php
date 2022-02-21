@@ -41,16 +41,18 @@
       <?php
         $no=1;
         $hrg=0; 
-        for ($i=0; $i < count($_SESSION['cetak']); $i++) { 
-          $dat = explode('||', $_SESSION['cetak'][$i]);
-          $hrg=$hrg+$dat[1];
-          echo "<tr>
-                  <td>".$no."</td>
-                  <td>".$dat[0]."</td>
-                  <td>Rp. ".number_format($dat[1])."</td>
-                  <td><a href='pesanan-unset-checkout.php?key=".$i."' class='button' onclick='return confirm(`Apakah Anda Yakin Membatalkan Pesanan Ini?`);'>Batalkan Item Ini</a></td>
-                </tr>";
-          $no++;  
+        foreach ($_SESSION['cetak'] as $i => $val) {
+          if (is_int($i)) {
+            $dat = explode('||', $_SESSION['cetak'][$i]);
+            $hrg=$hrg+$dat[1];
+              echo "<tr>
+                      <td>".$no."</td>
+                      <td>".$dat[0]."</td>
+                      <td>Rp. ".number_format($dat[1])."</td>
+                      <td><a href='pesanan-unset-checkout.php?key=".$i."' class='button' onclick='return confirm(`Apakah Anda Yakin Membatalkan Pesanan Ini?`);'>Batalkan Item Ini</a></td>
+                    </tr>";
+              $no++;  
+          }
         }
       ?>
 

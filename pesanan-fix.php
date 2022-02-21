@@ -38,6 +38,8 @@
     if(!isset($_SESSION['cetak'])){
         $_SESSION['cetak']=array();
     }
+
+    $_SESSION['ses_cetak']  = $_SESSION['ses_pesanan'];
        
    
     for ($i=0; $i < count($_SESSION['pesanan']); $i++) { 
@@ -50,13 +52,15 @@
           $tgl = date('Y-m-d');
           $wkt = date('H:i:s');
 
-          $result = mysqli_query($mysqli, "INSERT INTO table_transaksi (id, id_menu, total_bayar, tgl_pesan, waktu, metode_pembayaran) 
-            VALUES(null, $id, $dat[1], '$tgl', '$wkt', '$metode')") or die(mysqli_error($mysqli));
+          $result = mysqli_query($mysqli, "INSERT INTO table_transaksi (id, id_menu, total_bayar, tgl_pesan, waktu, metode_pembayaran, nomor_meja, session_meja) 
+            VALUES(null, $id, $dat[1], '$tgl', '$wkt', '$metode', '$_SESSION[meja]', '$_SESSION[ses_pesanan]')") or die(mysqli_error($mysqli));
 
 
     }
 
     unset($_SESSION['pesanan']);
+    unset($_SESSION['ses_pesanan']);
+    $_SESSION['ses_pesanan']  = date('Y-m-d H:i:s');
 
     function cek_id($val, $mysqli)
     {

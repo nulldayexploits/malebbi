@@ -1,7 +1,13 @@
 <?php 
     session_start();    
+    include('admin/config/connect-db.php'); 
     
-    unset($_SESSION['cetak']);
+    $result = mysqli_query($mysqli, "DELETE FROM table_transaksi WHERE nomor_meja = '$_SESSION[meja]' AND session_meja = '$_SESSION[ses_cetak]'") or die(mysqli_error($mysqli));
+    
+    if($result){
+      unset($_SESSION['cetak']);
+    }
+
 
     
         echo '<script type="text/javascript">
