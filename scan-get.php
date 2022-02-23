@@ -6,6 +6,8 @@
  $_SESSION['ses_pesanan']  = date('Y-m-d H:i:s');
  
  unset($_SESSION['pesanan']);
+ unset($_SESSION['cetak']);
+ unset($_SESSION['cetak_id']);
 
  if(isset($_SESSION['meja']))
  {

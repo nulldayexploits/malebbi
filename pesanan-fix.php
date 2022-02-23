@@ -37,14 +37,15 @@
 
     if(!isset($_SESSION['cetak'])){
         $_SESSION['cetak']=array();
+        $_SESSION['cetak_id']=array();   
     }
 
     $_SESSION['ses_cetak']  = $_SESSION['ses_pesanan'];
-       
    
     for ($i=0; $i < count($_SESSION['pesanan']); $i++) { 
          
           array_push($_SESSION['cetak'],$_SESSION['pesanan'][$i]); 
+          array_push($_SESSION['cetak_id'], $_SESSION['meja']."[]".$_SESSION['ses_pesanan']); 
 
           $dat = explode('||', $_SESSION['pesanan'][$i]);
 

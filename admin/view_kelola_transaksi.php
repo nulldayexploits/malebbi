@@ -20,9 +20,14 @@
 
         <?php
           $no = 1;
-          $result = mysqli_query($mysqli, "SELECT * FROM table_transaksi a 
+          $result = mysqli_query($mysqli, "SELECT a.*, b.nama_menu, 
+                                           CONCAT(a.nomor_meja, '-', a.session_meja) kode 
+                                           FROM table_transaksi a 
                                            LEFT JOIN table_menu b ON a.id_menu = b.id
                                            ORDER BY a.tgl_pesan DESC, a.nomor_meja, a.session_meja");
+          
+          $kode="";
+          $kode1="";
           $nomor="";
           $ses="";
           $nomor1="";
@@ -35,10 +40,12 @@
 
 
         <?php
-          if($nomor1 <> $data['nomor_meja'] && $ses1 <> $data['session_meja'])
+          //if($nomor1 <> $data['nomor_meja'] && $ses1 <> $data['session_meja'])
+          if($kode1 <> $data['kode'])
           {
             $nomor1 = $data['nomor_meja'];
             $ses1 = $data['session_meja'];
+            $kode1 = $data['kode'];
 
             if($total > 0){
         ?>  
@@ -46,10 +53,12 @@
         <?php } } ?>
         
         <?php        
-          if($nomor == "" && $ses == "" OR $nomor <> $data['nomor_meja'] && $ses <> $data['session_meja'])
+          //if($nomor == "" && $ses == "" OR $nomor <> $data['nomor_meja'] && $ses <> $data['session_meja'])
+          if($kode == "" OR $kode <> $data['kode'])
           {
             $nomor = $data['nomor_meja'];
             $ses = $data['session_meja'];
+            $kode = $data['kode'];
         ?>
 
 

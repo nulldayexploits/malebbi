@@ -58,8 +58,7 @@
 
     </table>
     <br><br>
-    <a href="pesanan-unset-all-checkout.php" class="button" onclick='return confirm(`Apakah Anda Yakin Membatalkan Pesanan Ini?`);'>Batalkan Semua Pesanan</a>
-
+    <!-- <a href="pesanan-unset-all-checkout.php" class="button" onclick='return confirm(`Apakah Anda Yakin Membatalkan Pesanan Ini?`);'>Batalkan Semua Pesanan</a> -->
 
 
                         </div>

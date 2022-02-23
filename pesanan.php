@@ -49,7 +49,9 @@
                   <td>".$no."</td>
                   <td>".$dat[0]."</td>
                   <td>Rp. ".number_format($dat[1])."</td>
-                  <td><a href='pesanan-unset.php?key=".$i."' class='button' onclick='return confirm(`Apakah Anda Yakin Akan Menghapus Ini?`);'>Hapus</a></td>
+                  <td><a href='pesanan-unset.php?key=".$i."' class='button' onclick='return confirm(`Apakah Anda Yakin Akan Menghapus Ini?`);'>Hapus</a>
+                  <a href='pesanan-get.php?menu=".$dat[0]."||".$dat[1]."&loadto=pesanan.php' class='button' onclick='return confirm(`Apakah Anda Yakin Menambah Menu Ini?`);'>Tambah +1</a>
+                  </td>
                 </tr>";
           $no++;  
         }
