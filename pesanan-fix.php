@@ -42,7 +42,8 @@
 
     $_SESSION['ses_cetak']  = $_SESSION['ses_pesanan'];
    
-    for ($i=0; $i < count($_SESSION['pesanan']); $i++) { 
+        foreach ($_SESSION['pesanan'] as $i => $val) {
+          if (is_int($i)) {
          
           array_push($_SESSION['cetak'],$_SESSION['pesanan'][$i]); 
           array_push($_SESSION['cetak_id'], $_SESSION['meja']."[]".$_SESSION['ses_pesanan']); 
@@ -57,6 +58,7 @@
             VALUES(null, $id, $dat[1], '$tgl', '$wkt', '$metode', '$_SESSION[meja]', '$_SESSION[ses_pesanan]')") or die(mysqli_error($mysqli));
 
 
+      }
     }
 
     unset($_SESSION['pesanan']);
