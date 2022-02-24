@@ -24,7 +24,7 @@
                                            CONCAT(a.nomor_meja, '-', a.session_meja) kode 
                                            FROM table_transaksi a 
                                            LEFT JOIN table_menu b ON a.id_menu = b.id
-                                           ORDER BY a.tgl_pesan DESC, a.nomor_meja, a.session_meja");
+                                           ORDER BY a.tgl_pesan DESC, a.waktu DESC, a.nomor_meja, a.session_meja");
           
           $kode="";
           $kode1="";
