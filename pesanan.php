@@ -42,18 +42,20 @@
       <?php
         $no=1;
         $hrg=0; 
-        for ($i=0; $i < count($_SESSION['pesanan']); $i++) { 
-          $dat = explode('||', $_SESSION['pesanan'][$i]);
-          $hrg=$hrg+$dat[1];
-          echo "<tr>
-                  <td>".$no."</td>
-                  <td>".$dat[0]."</td>
-                  <td>Rp. ".number_format($dat[1])."</td>
-                  <td><a href='pesanan-unset.php?key=".$i."' class='button' onclick='return confirm(`Apakah Anda Yakin Akan Menghapus Ini?`);'>Hapus</a>
-                  <a href='pesanan-get.php?menu=".$dat[0]."||".$dat[1]."&loadto=pesanan.php' class='button' onclick='return confirm(`Apakah Anda Yakin Menambah Menu Ini?`);'>Tambah +1</a>
-                  </td>
-                </tr>";
-          $no++;  
+        foreach ($_SESSION['pesanan'] as $i => $val) {
+          if (is_int($i)) {
+              $dat = explode('||', $_SESSION['pesanan'][$i]);
+              $hrg=$hrg+$dat[1];
+              echo "<tr>
+                      <td>".$no."</td>
+                      <td>".$dat[0]."</td>
+                      <td>Rp. ".number_format($dat[1])."</td>
+                      <td><a href='pesanan-unset.php?key=".$i."' class='button' onclick='return confirm(`Apakah Anda Yakin Akan Menghapus Ini?`);'>Hapus</a>
+                      <a href='pesanan-get.php?menu=".$dat[0]."||".$dat[1]."&loadto=pesanan.php' class='button' onclick='return confirm(`Apakah Anda Yakin Menambah Menu Ini?`);'>Tambah +1</a>
+                      </td>
+                    </tr>";
+              $no++;  
+          }
         }
       ?>
 
