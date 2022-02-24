@@ -120,7 +120,7 @@
                         <div class="navbar-brand">
                             <a href="#" class="navbar-logo">
                                 <img src="../img/logo2.png" alt="" title=""></a>
-                            <a class="navbar-caption" href="#" style="font-size: 25px;font-weight: bold;"><b style="color:#fff;">Meja: <?php if(isset($_SESSION['meja'])){ echo $_SESSION['meja'];}else{echo 'Belum Ada';} ?></b></a>
+                            <a class="navbar-caption" href="#" style="font-size: 25px;font-weight: bold;"><b style="color:#fff;">Meja: <?php if(isset($_SESSION['meja'])){ echo $_SESSION['meja'];}else{echo '<script>alert("Nomor Meja Belum Ada")</script>';} ?></b></a>
                         </div>
                     </div>
                     <div class="mbr-table-cell">

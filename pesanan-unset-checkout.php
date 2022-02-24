@@ -13,7 +13,8 @@
     $result = mysqli_query($mysqli, "DELETE FROM table_transaksi 
                                     WHERE id_menu = $i 
                                     AND nomor_meja = '$dat_id[0]' 
-                                    AND session_meja = '$dat_id[1]'") or die(mysqli_error($mysqli));
+                                    AND session_meja = '$dat_id[1]'
+                                    LIMIT 1") or die(mysqli_error($mysqli));
     
     if($result){
       unset($_SESSION['cetak'][$_GET['key']]);
