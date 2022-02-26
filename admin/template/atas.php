@@ -1,6 +1,7 @@
 <?php 
   include("config/auth.php");
   include('config/connect-db.php');
+   date_default_timezone_set('Asia/Makassar');
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0049)http://localhost/public_lasttask/gotaaruf/public/ -->

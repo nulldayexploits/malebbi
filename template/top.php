@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); date_default_timezone_set('Asia/Makassar'); ?>
 <!DOCTYPE html>
     <html lang="en" class="desktop mbr-site-loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Malebbi Resto</title>

@@ -62,8 +62,8 @@
     }
 
     unset($_SESSION['pesanan']);
-    unset($_SESSION['ses_pesanan']);
-    $_SESSION['ses_pesanan']  = date('Y-m-d H:i:s');
+    //unset($_SESSION['ses_pesanan']);
+    //$_SESSION['ses_pesanan']  = date('Y-m-d H:i:s');
 
     function cek_id($val, $mysqli)
     {

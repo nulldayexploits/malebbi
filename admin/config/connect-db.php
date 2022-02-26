@@ -1,5 +1,5 @@
 <?php
-
+  
   $databaseHost = 'localhost';
   $databaseName = '21_saw_resto';
   $databaseUsername = 'root';
