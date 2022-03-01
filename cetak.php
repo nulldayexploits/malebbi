@@ -10,7 +10,8 @@
       <?php
         $no=1;
         $hrg=0; 
-        for ($i=0; $i < count($_SESSION['cetak']); $i++) { 
+        foreach ($_SESSION['cetak'] as $i => $val) {
+          if (is_int($i)) {
           $dat = explode('||', $_SESSION['cetak'][$i]);
           $hrg=$hrg+$dat[1];
           echo "<tr>
@@ -19,6 +20,7 @@
                   <td><center>Rp. ".number_format($dat[1])."</td>
                 </tr>";
           $no++;  
+         }
         }
       ?>
 
